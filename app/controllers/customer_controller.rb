@@ -7,8 +7,14 @@ class CustomersController < ApplicationController
 
     post '/customers' do
         customer = Customer.create(
-            # something goes here
+            {name: params[:name],
+            email: params[:email],
+            phone: params[:phone],
+            birthday: params[:birthday]
+            }
+
         )
+        customer.to_json
     end
 
 end
