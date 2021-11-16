@@ -12,7 +12,6 @@ class CustomersController < ApplicationController
             phone: params[:phone],
             birthday: params[:birthday]
             }
-
         )
         customer.to_json
     end
