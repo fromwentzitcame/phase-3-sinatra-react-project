@@ -6,8 +6,8 @@ class CustomersController < ApplicationController
     end
 
     post '/customers' do
-        customer = Customer.create(
-            {name: params[:name],
+        customer = Customer.create({
+            name: params[:name],
             email: params[:email],
             phone: params[:phone],
             birthday: params[:birthday]
@@ -20,6 +20,17 @@ class CustomersController < ApplicationController
         customer = Customer.find(params[:id])
         customer.destroy
         params[:id]
+    end
+
+    patch '/customers/:id' do
+        customer = Customer.find(params[:id])
+        customer.update(
+            name: params[:name],
+            email: params[:email],
+            phone: params[:phone],
+            birthday: params[:birthday]
+        )
+        customer.to_json
     end
 
 end
