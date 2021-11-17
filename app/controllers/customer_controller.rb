@@ -17,4 +17,8 @@ class CustomersController < ApplicationController
         customer.to_json
     end
 
+    # delete '/customers/${id}' do
+    #     Customer.delete
+    # end
+
 end
