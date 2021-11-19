@@ -7,22 +7,22 @@ class NewslettersController < ApplicationController
 
     get '/newsletters/promos' do
         promos = Newsletter.find_by(name: "Promotions & Sales").customer_list
-        promos.to_json
+        promos.compact.to_json
     end
 
     get '/newsletters/events' do
-        promos = Newsletter.find_by(name: "Community Events").customer_list
-        promos.to_json
+        events = Newsletter.find_by(name: "Community Events").customer_list
+        events.compact.to_json
     end
 
     get '/newsletters/birthdays' do
-        promos = Newsletter.find_by(name: "Birthday Promo").customer_list
-        promos.to_json
+        birthdays = Newsletter.find_by(name: "Birthday Promo").customer_list
+        birthdays.compact.to_json
     end
 
     get '/newsletters/texts' do
-        promos = Newsletter.find_by(name: "Texts").customer_list
-        promos.to_json
+        texts = Newsletter.find_by(name: "Texts").customer_list
+        texts.compact.to_json
     end
 
 end

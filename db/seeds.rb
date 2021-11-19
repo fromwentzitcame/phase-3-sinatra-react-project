@@ -1,8 +1,11 @@
 puts "🌱 Seeding spices..."
 puts "Deleting newsletter/customer/subscriber data"
 Newsletter.destroy_all
+Newsletter.reset_pk_sequence
 Customer.destroy_all
+Customer.reset_pk_sequence
 Subscriber.destroy_all
+Subscriber.reset_pk_sequence
 
 # Seed your database here
 puts "Creating newsletters..."
